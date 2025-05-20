@@ -88,10 +88,6 @@
             margin-top: 30px;
         }
 
-        .texto-cabecalho p {
-            font-size: 1.2em;
-        }
-
         .texto-cabecalho h1 span {
             color: var(--dourado);
         }
