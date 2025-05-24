@@ -160,6 +160,7 @@ nav ul li a:hover::after {
   background-color: var(--dourado);
   transform: translateY(-10px);
   transition: background-color 0.5s, transform 0.5s;
+  cursor: pointer;
 }
 
 .galeria-grid {
