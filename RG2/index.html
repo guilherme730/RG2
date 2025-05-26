@@ -24,10 +24,15 @@
                     <li><a href="#contato">Contato</a></li> |
                 </ul>
             </nav>
-            <div class="texto-cabecalho">
-                <h1>Bem-vindo à <span>RG2 Escola Esportiva</span></h1>
-                <p>A melhor escola de <span class="habilidades"></span></p>
-            </div>
+<div class="texto-cabecalho-grid">
+    <div class="texto-esquerda">
+        <h1>Bem-vindo à <span>RG2 Escola Esportiva</span></h1>
+        <p>A melhor escola de <span class="habilidades"></span></p>
+    </div>
+    <div class="carrossel-direita">
+        <img id="imagem-carrossel" src="imagens/Firefly_gere imagem de uma escola de futebol 351647.jpg" alt="Esportes RG2">
+    </div>
+</div>
         </div>
     </div>
 
@@ -102,13 +107,29 @@
     </footer>
     <script>
         var typed = new Typed('.habilidades', {
-            strings: ['Futebol.', 'Vôlei.', 'Basquete.', 'Tênis de Mesa.', 'Tênis.', 'Natação.', 'Esportes'],
-            typeSpeed: 60,
+            strings: ['Futebol.', 'Vôlei.', 'Basquete.', 'Tênis de Mesa.', 'Tênis.', 'Natação.', 'Esportes.'],
+            typeSpeed: 80,
             backSpeed: 40,
             backDelay: 500,
             loop: true,
         });
     </script>
+
+    <script>
+    const imagens = [
+        'imagens/Firefly_gere imagem de uma escola de futebol 351647.jpg',
+        'imagens/Firefly_gere imagem de uma escola de vôlei 291593.jpg',
+        'imagens/Firefly_gere imagem de uma quadra de basquete 291593.jpg'
+    ];
+
+    let atual = 0;
+    const imgElemento = document.getElementById("imagem-carrossel");
+
+    setInterval(() => {
+        atual = (atual + 1) % imagens.length;
+        imgElemento.src = imagens[atual];
+    }, 3000);
+</script>
 </body>
 
 </html>
