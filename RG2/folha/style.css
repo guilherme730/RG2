@@ -205,3 +205,8 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
+.texto-cabecalho .habilidades {
+  margin-top: 10px;
+  color: var(--dourado)
+}

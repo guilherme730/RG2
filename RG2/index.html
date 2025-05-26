@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="folha/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
 </head>
 
 <body>
@@ -24,6 +26,7 @@
             </nav>
             <div class="texto-cabecalho">
                 <h1>Bem-vindo à <span>RG2 Escola Esportiva</span></h1>
+                <p>A melhor escola de <span class="habilidades"></span></p>
             </div>
         </div>
     </div>
@@ -97,7 +100,15 @@
     <footer>
         <p>&copy; Copyright © 2025. RG2 Escola Esportiva.</p>
     </footer>
-
+    <script>
+        var typed = new Typed('.habilidades', {
+            strings: ['Futebol.', 'Vôlei.', 'Basquete.', 'Tênis de Mesa.', 'Tênis.', 'Natação.', 'Esportes'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 500,
+            loop: true,
+        });
+    </script>
 </body>
 
 </html>
