@@ -18,6 +18,7 @@ body {
   background-color: var(--branco);
   color: var(--texto);
   padding-top: 100px;
+  transition: background-color 0.5s, transform 0.5s;
 }
 
 a {
@@ -274,7 +275,8 @@ footer {
 /* MODO ESCURO */
 body.modo-escuro {
   background-color: var(--bg-preto);
-  color: var(--branco)
+  color: var(--branco);
+  transition: background-color 0.5s, transform 0.5s;
 }
 
 body.modo-escuro .lista-modalidades div {
