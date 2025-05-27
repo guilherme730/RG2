@@ -15,7 +15,7 @@
     <div id="header" class="header">
         <div class="container">
             <nav class="cabecalho">
-                <img src="imagens/Logo Dinâmico RG2 Sports.png" class="logo" alt="Logotipo RG2" />
+                <img src="imagens/RG2 Sports.pngTransparente.png" class="logo" alt="Logotipo RG2" />
                 <ul>
                     <li><a href="#header">Home</a></li> |
                     <li><a href="#sobre">Sobre</a></li> |
@@ -24,15 +24,15 @@
                     <li><a href="#contato">Contato</a></li> |
                 </ul>
             </nav>
-<div class="texto-cabecalho-grid">
-    <div class="texto-esquerda">
-        <h1>Bem-vindo à <span>RG2 Escola Esportiva</span></h1>
-        <p>A melhor escola de <span class="habilidades"></span></p>
-    </div>
-    <div class="carrossel-direita">
-        <img id="imagem-carrossel" src="imagens/Firefly_gere imagem de uma escola de futebol 351647.jpg" alt="Esportes RG2">
-    </div>
-</div>
+            <div class="texto-cabecalho-grid">
+                <div class="texto-esquerda">
+                    <h1>Bem-vindo à <span>RG2 Escola Esportiva</span></h1>
+                    <p>A melhor escola de <span class="habilidades"></span></p>
+                </div>
+                <div class="imagem-direita">
+                    <img id="imagem-carrossel" src="imagens/RG2 Sports.pngTransparente.png" alt="Esportes RG2">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -102,6 +102,7 @@
         </form>
     </div>
 
+
     <footer>
         <p>&copy; Copyright © 2025. RG2 Escola Esportiva.</p>
     </footer>
@@ -115,21 +116,25 @@
         });
     </script>
 
+    <button id="toggle-dark" class="botao-darkmode-fixo">🌙</button>
+
     <script>
-    const imagens = [
-        'imagens/Firefly_gere imagem de uma escola de futebol 351647.jpg',
-        'imagens/Firefly_gere imagem de uma escola de vôlei 291593.jpg',
-        'imagens/Firefly_gere imagem de uma quadra de basquete 291593.jpg'
-    ];
+        const toggleBtn = document.getElementById("toggle-dark");
+        const body = document.body;
 
-    let atual = 0;
-    const imgElemento = document.getElementById("imagem-carrossel");
+        if (localStorage.getItem("modo") === "escuro") {
+            body.classList.add("modo-escuro");
+            toggleBtn.textContent = "☀️";
+        }
 
-    setInterval(() => {
-        atual = (atual + 1) % imagens.length;
-        imgElemento.src = imagens[atual];
-    }, 3000);
-</script>
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("modo-escuro");
+            const isEscuro = body.classList.contains("modo-escuro");
+            toggleBtn.textContent = isEscuro ? "☀️" : "🌙";
+            localStorage.setItem("modo", isEscuro ? "escuro" : "claro");
+        });
+    </script>
+
 </body>
 
 </html>
