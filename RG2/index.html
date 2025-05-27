@@ -37,46 +37,104 @@
     </div>
 
     <!-- SOBRE -->
-    <div id="sobre" class="container sobre">
-        <h2 class="subtitulo">Sobre</h2>
+<div id="sobre"> <!--missão visão e valores não estão sumindo-->
+  <div class="container">
+    <div class="linha">
+      <div class="sobre-col-1">
+        <img src="imagens/Firefly_foto  aérea de uma escola de esportes 98422.jpg" alt="foto da escola">
+      </div>
+      <div class="sobre-col-2">
+        <h1 class="subtitulo">Sobre</h1>
         <p>
-            A RG2 é uma escola esportiva dedicada à formação de jovens atletas, com foco na excelência esportiva,
-            educação e valores. Com uma estrutura moderna e equipe técnica qualificada, oferecemos treinamentos em
-            diversas modalidades, promovendo saúde, disciplina e trabalho em equipe.
+          A RG2 Escola Esportiva nasceu do sonho de transformar o esporte em uma ferramenta de inclusão social, educação e desenvolvimento humano. Fundada por apaixonados por esportes e ensino, a escola oferece treinamentos especializados em diversas modalidades, com foco na formação integral de seus alunos. Aqui, acreditamos que o esporte vai além da competição: ele educa, inspira e transforma vidas.
         </p>
+
+        <div class="aba-titulos">
+          <p class="aba-links" onclick="abriraba('missao')">Missão</p>
+          <p class="aba-links" onclick="abriraba('visao')">Visão</p>
+          <p class="aba-links" onclick="abriraba('valores')">Valores</p>
+        </div>
+
+        <div class="aba-conteudos" id="missao">
+          <p>
+            Oferecer uma educação esportiva de excelência, promovendo o desenvolvimento físico, emocional e social de crianças e jovens através do esporte.
+          </p>
+        </div>
+
+        <div class="aba-conteudos" id="visao">
+          <p>
+            Ser uma referência nacional em formação esportiva e cidadã, reconhecida pela qualidade técnica e pelo impacto positivo na vida dos alunos.
+          </p>
+        </div>
+
+        <div class="aba-conteudos" id="valores">
+          <p>
+            Ética, respeito, disciplina, superação, inclusão social, espírito de equipe e paixão pelo esporte.
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+
 
     <!-- MODALIDADES -->
-    <div id="modalidades" class="container modalidades">
+ <div id="modalidades" class="container modalidades">
         <h2 class="subtitulo">Modalidades Esportivas</h2>
         <div class="lista-modalidades">
-            <div>
-                <h2><span style='font-size:25px;'>&#9917;</span> Futebol</h2>
-                <p>Treinamento técnico, tático e físico para todas as idades.</p>
-            </div>
-            <div>
+  <div onclick="toggleModalidade(this)">
+    <h2><span style='font-size:25px;'>&#9917;</span> Futebol</h2>
+    <ul class="info-modalidade">
+      <li><strong>Descrição:</strong> Treinamento técnico, tático e físico para todas as idades.</li>
+      <li><strong>Horários:</strong> Seg e Qua - 16h às 18h | Sáb - 10h às 12h</li>
+      <li><strong>Professores:</strong> João Silva, Carla Mendes</li>
+    </ul>
+  </div>
+<div onclick="toggleModalidade(this)">
                 <h2><span style='font-size:25px;'>&#127936;</span>Basquete</h2>
-                <p>Desenvolvimento de fundamentos, resistência e visão de jogo.</p>
+                <ul class="info-modalidade">
+      <li><strong>Descrição:</strong> Desenvolvimento de fundamentos, resistência e visão de jogo.</li>
+      <li><strong>Horários:</strong> Seg e Qua - 16h às 18h | Sáb - 10h às 12h</li>
+      <li><strong>Professores:</strong> João Silva, Carla Mendes</li>
+    </ul>
             </div>
-            <div>
+<div onclick="toggleModalidade(this)">
                 <h2><span style='font-size:25px;'>&#127952;</span> Vôlei</h2>
-                <p>Treinos de quadra e areia com foco em técnica e agilidade.</p>
+                <ul class="info-modalidade">
+      <li><strong>Descrição:</strong> Treinos de quadra e areia com foco em técnica e agilidade.</li>
+      <li><strong>Horários:</strong> Seg e Qua - 16h às 18h | Sáb - 10h às 12h</li>
+      <li><strong>Professores:</strong> João Silva, Carla Mendes</li>
+    </ul>
             </div>
-            <div>
+<div onclick="toggleModalidade(this)">
                 <h2><span style='font-size:25px;'>&#127992;</span> Tênis</h2>
-                <p>Aulas individuais e coletivas com foco em precisão e estratégia.</p>
+                <ul class="info-modalidade">
+      <li><strong>Descrição:</strong> Aulas individuais e coletivas com foco em precisão e estratégia.</li>
+      <li><strong>Horários:</strong> Seg e Qua - 16h às 18h | Sáb - 10h às 12h</li>
+      <li><strong>Professores:</strong> João Silva, Carla Mendes</li>
+    </ul>
             </div>
-            <div>
+<div onclick="toggleModalidade(this)">
                 <h2><span style='font-size:25px;'>&#127955;</span> Tênis de Mesa</h2>
-                <p>Reflexos, coordenação e técnica em ambiente indoor.</p>
+                <ul class="info-modalidade">
+      <li><strong>Descrição:</strong> Reflexos, coordenação e técnica em ambiente indoor.</li>
+      <li><strong>Horários:</strong> Seg e Qua - 16h às 18h | Sáb - 10h às 12h</li>
+      <li><strong>Professores:</strong> João Silva, Carla Mendes</li>
+    </ul>
             </div>
-            <div>
+<div onclick="toggleModalidade(this)">
                 <h2><span style='font-size:25px;'>&#127946;</span> Natação</h2>
-                <p>Turmas para iniciantes e atletas, com ênfase em resistência e respiração.</p>
+                <ul class="info-modalidade">
+      <li><strong>Descrição:</strong> Turmas para iniciantes e atletas, com ênfase em resistência e respiração.</li>
+      <li><strong>Horários:</strong> Seg e Qua - 16h às 18h | Sáb - 10h às 12h</li>
+      <li><strong>Professores:</strong> João Silva, Carla Mendes</li>
+    </ul>
             </div>
         </div>
     </div>
     </div>
+
 
     <!-- GALERIA -->
     <div id="galeria" class="container galeria">
@@ -134,6 +192,50 @@
             localStorage.setItem("modo", isEscuro ? "escuro" : "claro");
         });
     </script>
+
+<script>
+  var abaLinks = document.getElementsByClassName("aba-links");
+  var abaConteudos = document.getElementsByClassName("aba-conteudos");
+
+  function abriraba(abaNome) {
+    for (abaLink of abaLinks) {
+      abaLink.classList.remove("link-ativo");
+    }
+    for (abaConteudo of abaConteudos) {
+      abaConteudo.classList.remove("aba-ativa");
+    }
+    event.currentTarget.classList.add("link-ativo");
+    document.getElementById(abaNome).classList.add("aba-ativa");
+  }
+</script>
+
+<script>
+  function toggleModalidade(card) {
+    const cards = document.querySelectorAll(".lista-modalidades div");
+
+    const isAtivo = card.classList.contains("ativo");
+
+    // Fecha todas
+    cards.forEach(c => {
+      c.classList.remove("ativo");
+      const ul = c.querySelector(".info-modalidade");
+      if (ul) {
+        ul.classList.remove("visivel");
+        ul.classList.add("oculto");
+      }
+    });
+
+    // Se não estava ativo, ativa agora
+    if (!isAtivo) {
+      card.classList.add("ativo");
+      const ul = card.querySelector(".info-modalidade");
+      if (ul) {
+        ul.classList.remove("oculto");
+        ul.classList.add("visivel");
+      }
+    }
+  }
+</script>
 
 </body>
 
