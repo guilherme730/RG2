@@ -137,17 +137,153 @@
 
 
     <!-- GALERIA -->
-    <div id="galeria" class="container galeria">
-        <h2 class="subtitulo">Galeria de Treinamentos</h2>
-        <div class="galeria-grid">
-            <img src="" alt="Futebol">
-            <img src="" alt="Basquete">
-            <img src="" alt="Vôlei">
-            <img src="" alt="Tênis">
-            <img src="" alt="Tênis de Mesa">
-            <img src="" alt="Natação">
-        </div>
+    <h2>Galeria de Treinamentos</h2>
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('tudo')"> Mostrar Tudo</button>
+      <button class="btn" onclick="filterSelection('futebol')"> Futebol</button>
+      <button class="btn" onclick="filterSelection('volei')"> Vôlei</button>
+      <button class="btn" onclick="filterSelection('basquete')"> Basquete</button>
+      <button class="btn" onclick="filterSelection('tenis')"> Tênis</button>
+      <button class="btn" onclick="filterSelection('tenis de mesa')"> Tênis de Mesa</button>
+      <button class="btn" onclick="filterSelection('natacao')"> Natação</button>
     </div>
+    
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+      <div class="column futebol">
+        <div class="content">
+          <img id="futebol" src="imagens/Firefly_gere imagem de uma escola de futebol 351647.jpg" alt="Futebol" style="width:100%">
+          <h4>Futebol</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column futebol">
+        <div class="content">
+          <img src="imagens/Firefly_gere imagem de uma escola de futebol 351647.jpg" alt="Lights" style="width:100%">
+          <h4>Futebol</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column futebol">
+        <div class="content">
+          <img src="imagens/Firefly_gere imagem de uma escola de futebol 351647.jpg" alt="Nature" style="width:100%">
+          <h4>Futebol</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+    
+      <div class="column volei">
+        <div class="content">
+          <img src="imagens/Firefly_gere imagem de uma escola de vôlei 291593.jpg" alt="volei" style="width:100%">
+          <h4>Vôlei</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column volei">
+        <div class="content">
+          <img src="imagens/Firefly_gere imagem de uma escola de vôlei 291593.jpg" alt="volei" style="width:100%">
+          <h4>Vôlei</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column volei">
+        <div class="content">
+          <img src="imagens/Firefly_gere imagem de uma escola de vôlei 291593.jpg" alt="volei" style="width:100%">
+          <h4>Vôlei</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+    
+      <div class="column basquete">
+        <div class="content">
+          <img src="imagens/Firefly_gere imagem de uma quadra de basquete 291593.jpg" alt="People" style="width:100%">
+          <h4>Basquete</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column basquete">
+        <div class="content">
+          <img src="imagens/Firefly_gere imagem de uma quadra de basquete 291593.jpg" alt="People" style="width:100%">
+          <h4>Basquete</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column basquete">
+        <div class="content">
+          <img src="imagens/Firefly_gere imagem de uma quadra de basquete 291593.jpg" alt="People" style="width:100%">
+          <h4>Basquete</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column tenis">
+        <div class="content">
+          <img src="imagens/Firefly_crie imagens de uma escola de tênis 704497.jpg" alt="People" style="width:100%">
+          <h4>Tênis</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column tenis">
+        <div class="content">
+          <img src="imagens/Firefly_crie imagens de uma escola de tênis 704497.jpg" alt="People" style="width:100%">
+          <h4>Tênis</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column tenis">
+        <div class="content">
+          <img src="imagens/Firefly_crie imagens de uma escola de tênis 704497.jpg" alt="People" style="width:100%">
+          <h4>Tênis</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column tenis de mesa">
+        <div class="content">
+          <img src="imagens/Firefly_crie imagens de uma escola de tênis de mesa458324.jpg" alt="People" style="width:100%">
+          <h4>Tênis de Mesa</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column tenis de mesa">
+        <div class="content">
+          <img src="imagens/Firefly_crie imagens de uma escola de tênis de mesa458324.jpg" alt="People" style="width:100%">
+          <h4>Tênis de Mesa</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column tenis de mesa">
+        <div class="content">
+          <img src="imagens/Firefly_crie imagens de uma escola de tênis de mesa458324.jpg" alt="People" style="width:100%">
+          <h4>Tênis de Mesa</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column natacao">
+        <div class="content">
+          <img src="imagens/Firefly_crie imagens de uma escola de natação 458324.jpg" alt="People" style="width:100%">
+          <h4>Natação</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column natacao">
+        <div class="content">
+          <img src="imagens/Firefly_crie imagens de uma escola de natação 458324.jpg" alt="People" style="width:100%">
+          <h4>Natação</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+      <div class="column natacao">
+        <div class="content">
+          <img src="imagens/Firefly_crie imagens de uma escola de natação 458324.jpg" alt="People" style="width:100%">
+          <h4>Natação</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+    <!-- END GRID -->
+    </div>
+
 
     <!-- CONTATO -->
     <div id="contato" class="container contato">
@@ -236,6 +372,58 @@
     }
   }
 </script>
+
+<script>
+  filterSelection("tudo") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "tudo") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
 
 </body>
 
