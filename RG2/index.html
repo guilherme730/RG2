@@ -80,7 +80,7 @@
 
 
     <!-- MODALIDADES -->
- <div id="modalidades" class="container modalidades">
+ <div id="modalidades" class="container">
         <h2 class="subtitulo">Modalidades Esportivas</h2>
         <div class="lista-modalidades">
   <div onclick="toggleModalidade(this)">
@@ -137,7 +137,7 @@
 
 
     <!-- GALERIA -->
-          <div id="galeria-container">
+          <div id="galeria-container" class="container">
     <h2>Galeria de Treinamentos</h2>
     <div id="myBtnContainer">
       <button class="btn active" onclick="filterSelection('tudo')"> Mostrar Tudo</button>
@@ -285,6 +285,7 @@
     <!-- END GRID -->
     </div>
     </div>
+    <button id="verMaisBtn" onclick="toggleGaleria()">Ver mais</button>
 
     
 
@@ -472,6 +473,23 @@ for (var i = 0; i < btns.length; i++) {
     captionText.innerText = img.alt || "Imagem da galeria";
   }
 </script>
+
+<script>
+function toggleGaleria() {
+  const galeria = document.getElementById("galeria-container");
+  const botao = document.getElementById("verMaisBtn");
+
+  if (galeria.classList.contains("expandida")) {
+    galeria.classList.remove("expandida");
+    botao.textContent = "Ver mais";
+  } else {
+    galeria.classList.add("expandida");
+    botao.textContent = "Ver menos";
+  }
+}
+
+</script>
+
 
 
 </body>

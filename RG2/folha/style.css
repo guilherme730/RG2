@@ -299,6 +299,31 @@ nav ul li a:hover::after {
   box-sizing: border-box;
 }
 
+#verMaisBtn {
+  display: block;
+  margin: 20px auto;
+  background-color: var(--dourado);
+  color: var(--azul);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  max-height: 600px;
+}
+#galeria-container {
+  max-height: 600px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.8s ease; 
+}
+
+#galeria-container.expandida {
+  max-height: 5000px; 
+}
+
+
+
 h2 {
   color: var(--dourado);
 }
