@@ -498,9 +498,8 @@ button:hover {
 
 .social-links a {
   font-size: 1.8rem;
-  color: #9b59b6;
+  color: var(--dourado);
   text-decoration: none;
-  transition: color 0.3s;
   padding: 0.5rem;
   border-radius: 50%;
   display: inline-block;
@@ -510,6 +509,10 @@ button:hover {
   line-height: 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  margin: 10px;
+  transition: transform 0.3s, color 0.3s;
+  animation: popUp 1s ease forwards;
+  animation-delay: 0.5s;
 }
 
 .social-links {
@@ -558,6 +561,7 @@ button:hover {
 #location strong {
   color: var(--dourado);
 }
+
 
 /* ===================== RODAPÉ ===================== */
 footer {
