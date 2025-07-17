@@ -1,0 +1,92 @@
+:root {
+    --azul: #06052f;
+    --dourado: #b8860b;
+    --branco: #f3f1ec;
+    --cinza: #E5E5E5;
+    --preto: #111;
+    --bg-preto: #000000;
+  
+  }
+
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    }
+
+    .sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: var(--azul);
+    color: white;
+    padding: 20px;
+    position: fixed;
+    }
+
+    .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: var(--dourado);
+    }
+
+    .sidebar a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    }
+
+    .sidebar a:hover {
+    background-color: var(--dourado);
+    color: var(--preto);
+    }
+
+    .main-content {
+    margin-left: 220px;
+    padding: 30px;
+    width: 100%;
+    background-color: var(--branco);
+    min-height: 100vh;
+    }
+
+    .main-content h1 {
+    color: var(--azul);
+    }
+
+    .form-group {
+    margin-bottom: 20px;
+    }
+
+    .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    }
+
+    .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cinza);
+    border-radius: 5px;
+    }
+
+    .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+    }
+
+    .btn-salvar {
+    background-color: var(--dourado);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    }
+
+    .btn-salvar:hover {
+    background-color: var(--azul);
+    }

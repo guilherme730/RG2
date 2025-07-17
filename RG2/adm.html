@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Administrativo - RG2 Sports</title>
+<link rel="stylesheet" href="folha/styleadmin.css">
+  
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Painel Admin</h2>
+        <a href="#">Editar Sobre</a>
+        <a href="#">Modalidades</a>
+        <a href="#">Imagens</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Editar Conteúdo da Home</h1>
+
+        <form method="POST" action="salvar.php" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="titulo">Título principal</label>
+            <input type="text" id="titulo" name="titulo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição abaixo do título</label>
+            <textarea id="descricao" name="descricao" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="imagem">Imagem da Home</label>
+            <input type="file" id="imagem" name="imagem">
+        </div>
+
+        <button type="submit" class="btn-salvar">Salvar</button>
+        </form>
+    </div>
+</body>
+</html>
