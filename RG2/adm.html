@@ -1,42 +1,394 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Painel Administrativo - RG2 Sports</title>
-<link rel="stylesheet" href="folha/styleadmin.css">
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Administrativo - RG2 Sports</title>
+    <!-- Estilos base do admin -->
+    <link rel="stylesheet" href="folha/styleadmin.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        /* ===== AJUSTES COMPLEMENTARES AO styleadmin.css ===== */
+    </style>
 </head>
+
 <body>
-    <div class="sidebar">
-        <h2>Painel Admin</h2>
-        <a href="#">Editar Sobre</a>
-        <a href="#">Modalidades</a>
-        <a href="#">Imagens</a>
-        <a href="#">Logout</a>
-    </div>
+    <!-- MENU LATERAL (expansão por hover já em styleadmin.css) -->
+    <nav class="menu" id="menuAdmin">
+        <ul class="menu-content">
+            <li><a href="#Home"><span class="material-symbols-outlined">home</span><span>Home</span></a></li>
+            <li><a href="#Sobre"><span class="material-symbols-outlined">dashboard</span><span>Sobre</span></a></li>
+            <li><a href="#Modalidades"><span
+                        class="material-symbols-outlined">sports_soccer</span><span>Modalidades</span></a></li>
+            <li><a href="#Galeria"><span class="material-symbols-outlined">photo_library</span><span>Galeria</span></a>
+            </li>
+            <li><a href="#Contatos"><span class="material-symbols-outlined">contact_mail</span><span>Contatos</span></a>
+            </li>
+            <li><a href="#OndeEstamos"><span class="material-symbols-outlined">location_on</span><span>Onde
+                        Estamos</span></a></li>
+            <li><a href="#Logout"><span class="material-symbols-outlined">logout</span><span>Logout</span></a></li>
+        </ul>
+    </nav>
 
-    <div class="main-content">
-        <h1>Editar Conteúdo da Home</h1>
-
-        <form method="POST" action="salvar.php" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="titulo">Título principal</label>
-            <input type="text" id="titulo" name="titulo" required>
+    <main>
+        <!-- ===================================================== -->
+        <!-- HOME                                                  -->
+        <!-- ===================================================== -->
+        <div id="Home" class="admin-card anchor-offset">
+            <h2>Home</h2>
+            <label for="homeTitulo">Título (h1)</label>
+            <input type="text" id="homeTitulo" placeholder="Bem-vindo à RG2 Escola Esportiva" />
+            <label for="homeDescricao">Descrição (linha abaixo do título)</label>
+            <textarea id="homeDescricao" rows="2" placeholder="A melhor escola de ..."></textarea>
+            <label for="homeImagem">Imagem do cabeçalho</label>
+            <img id="homePreview" class="preview-img" src="imagens/RG2 Sports.pngTransparente.png" alt="Preview Home" />
+            <input type="file" id="homeImagem" accept="image/*" />
+            <button class="botao-admin" onclick="salvarHome()">Salvar Home</button>
+            <div id="msgHome" class="msg-salvo">Home salva!</div>
         </div>
 
-        <div class="form-group">
-            <label for="descricao">Descrição abaixo do título</label>
-            <textarea id="descricao" name="descricao" required></textarea>
+        <!-- ===================================================== -->
+        <!-- SOBRE                                                  -->
+        <!-- ===================================================== -->
+        <div id="Sobre" class="admin-card anchor-offset">
+            <h2>Sobre</h2>
+            <label for="sobreTexto">Texto da seção Sobre</label>
+            <textarea id="sobreTexto" rows="8" placeholder="História da escola..."></textarea>
+            <label for="sobreImagem">Imagem da seção Sobre</label>
+            <img id="sobrePreview" class="preview-img"
+                src="imagens/Firefly_foto aérea de uma escola de esportes 98422.jpg" alt="Preview Sobre" />
+            <input type="file" id="sobreImagem" accept="image/*" />
+
+            <h3 style="color:var(--dourado);margin-top:32px;">Missão, Visão, Valores</h3>
+            <label for="sobreMissao">Missão</label>
+            <textarea id="sobreMissao" rows="2"></textarea>
+            <label for="sobreVisao">Visão</label>
+            <textarea id="sobreVisao" rows="2"></textarea>
+            <label for="sobreValores">Valores</label>
+            <textarea id="sobreValores" rows="2"></textarea>
+
+            <button class="botao-admin" onclick="salvarSobre()">Salvar Sobre</button>
+            <div id="msgSobre" class="msg-salvo">Sobre salvo!</div>
         </div>
 
-        <div class="form-group">
-            <label for="imagem">Imagem da Home</label>
-            <input type="file" id="imagem" name="imagem">
+        <!-- ===================================================== -->
+        <!-- MODALIDADES                                           -->
+        <!-- ===================================================== -->
+        <div id="Modalidades" class="admin-card anchor-offset">
+            <h2>Modalidades</h2>
+            <p>Adicione, edite ou remova modalidades esportivas exibidas no site principal.</p>
+            <div class="itens-repetiveis" id="listaModalidades"></div>
+            <button class="btn-pequeno" onclick="addModalidade()">+ Adicionar modalidade</button>
+            <button class="botao-admin" onclick="salvarModalidades()">Salvar Modalidades</button>
+            <div id="msgModalidades" class="msg-salvo">Modalidades salvas!</div>
         </div>
 
-        <button type="submit" class="btn-salvar">Salvar</button>
-        </form>
-    </div>
+        <!-- ===================================================== -->
+        <!-- GALERIA                                               -->
+        <!-- ===================================================== -->
+        <div id="Galeria" class="admin-card anchor-offset">
+            <h2>Galeria</h2>
+            <p>Gerencie as imagens da galeria do portfólio.</p>
+            <input type="file" id="galeriaInput" accept="image/*" multiple />
+            <div class="grid-galeria" id="gridGaleria"></div>
+            <button class="botao-admin" onclick="salvarGaleria()">Salvar Galeria</button>
+            <div id="msgGaleria" class="msg-salvo">Galeria salva!</div>
+        </div>
+
+        <!-- ===================================================== -->
+        <!-- CONTATOS                                              -->
+        <!-- ===================================================== -->
+        <div id="Contatos" class="admin-card anchor-offset">
+            <h2>Contatos</h2>
+            <label for="contatoEmail">E-mail</label>
+            <input type="email" id="contatoEmail" placeholder="contato@rg2sports.com" />
+            <label for="contatoTelefone">Telefone</label>
+            <input type="text" id="contatoTelefone" placeholder="(00) 90000-0000" />
+            <label for="contatoInsta">Instagram (@)</label>
+            <input type="text" id="contatoInsta" placeholder="@rg2sports" />
+            <label for="contatoMensagem">Mensagem padrão do formulário</label>
+            <textarea id="contatoMensagem" rows="3" placeholder="Obrigado por entrar em contato..."></textarea>
+            <button class="botao-admin" onclick="salvarContatos()">Salvar Contatos</button>
+            <div id="msgContatos" class="msg-salvo">Contatos salvos!</div>
+        </div>
+
+        <!-- ===================================================== -->
+        <!-- ONDE ESTAMOS                                          -->
+        <!-- ===================================================== -->
+        <div id="OndeEstamos" class="admin-card anchor-offset">
+            <h2>Onde Estamos</h2>
+            <label for="enderecoTexto">Endereço + info (texto livre, pode usar quebras de linha)</label>
+            <textarea id="enderecoTexto" rows="5" placeholder="Rua..., Cidade..., Horários...\nSábados..."></textarea>
+            <label for="mapaEmbed">Código Embed do Google Maps (iframe)</label>
+            <textarea id="mapaEmbed" rows="4" placeholder="<iframe ...></iframe>"></textarea>
+            <button class="botao-admin" onclick="salvarOnde()">Salvar Onde Estamos</button>
+            <div id="msgOnde" class="msg-salvo">Localização salva!</div>
+        </div>
+
+        <!-- ===================================================== -->
+        <!-- LOGOUT (Somente demonstrativo)                       -->
+        <!-- ===================================================== -->
+        <div id="Logout" class="admin-card anchor-offset">
+            <h2>Sair</h2>
+            <p>Funcionalidade de login/logout não implementada neste protótipo.</p>
+        </div>
+    </main>
+
+    <!-- ======================================================= -->
+    <!-- SCRIPT DE DADOS                                         -->
+    <!-- Estrutura única no localStorage: rg2CMS                 -->
+    <!-- ======================================================= -->
+    <script>
+        /* =====================================================
+           Estrutura de dados armazenada no localStorage:
+           rg2CMS = {
+             home:        { titulo, descricao, imagem },
+             sobre:       { texto, imagem, missao, visao, valores },
+             modalidades: [ {nome, descricao, horario, professores}, ... ],
+             galeria:     [ {src, alt, categoria}, ... ],
+             contatos:    { email, telefone, insta, mensagem },
+             onde:        { texto, mapa }
+           }
+        ===================================================== */
+
+        const CHAVE = 'rg2CMS';
+
+        function lerCMS() {
+            const bruto = localStorage.getItem(CHAVE);
+            if (!bruto) { return {}; } // vazio
+            try { return JSON.parse(bruto) || {}; } catch (e) { console.warn('Erro parse CMS', e); return {}; }
+        }
+        function gravarCMS(obj) {
+            localStorage.setItem(CHAVE, JSON.stringify(obj));
+        }
+
+        // -------- Helpers UI --------
+        function msgOK(id) {
+            const el = document.getElementById(id); if (!el) return; el.classList.add('visivel');
+            setTimeout(() => el.classList.remove('visivel'), 2000);
+        }
+
+        function fileToDataURL(file) {
+            return new Promise((resolve, reject) => {
+                const fr = new FileReader();
+                fr.onload = e => resolve(e.target.result);
+                fr.onerror = reject;
+                fr.readAsDataURL(file);
+            });
+        }
+
+        /* =====================================================
+           HOME
+        ===================================================== */
+        async function salvarHome() {
+            const cms = lerCMS();
+            cms.home = cms.home || {};
+            cms.home.titulo = document.getElementById('homeTitulo').value.trim();
+            cms.home.descricao = document.getElementById('homeDescricao').value.trim();
+            // imagem já está no preview (dataURL)
+            cms.home.imagem = document.getElementById('homePreview').src;
+            gravarCMS(cms);
+            msgOK('msgHome');
+        }
+
+        document.getElementById('homeImagem').addEventListener('change', async (ev) => {
+            const file = ev.target.files[0];
+            if (!file) return;
+            const dataURL = await fileToDataURL(file);
+            document.getElementById('homePreview').src = dataURL;
+        });
+
+        /* =====================================================
+           SOBRE (+ Missão/Visão/Valores)
+        ===================================================== */
+        async function salvarSobre() {
+            const cms = lerCMS();
+            cms.sobre = {
+                texto: document.getElementById('sobreTexto').value.trim(),
+                imagem: document.getElementById('sobrePreview').src,
+                missao: document.getElementById('sobreMissao').value.trim(),
+                visao: document.getElementById('sobreVisao').value.trim(),
+                valores: document.getElementById('sobreValores').value.trim()
+            };
+            gravarCMS(cms);
+            msgOK('msgSobre');
+        }
+
+        document.getElementById('sobreImagem').addEventListener('change', async (ev) => {
+            const file = ev.target.files[0];
+            if (!file) return;
+            const dataURL = await fileToDataURL(file);
+            document.getElementById('sobrePreview').src = dataURL;
+        });
+
+        /* =====================================================
+           MODALIDADES (lista dinâmico)
+        ===================================================== */
+        function addModalidade(dados) {
+            const lista = document.getElementById('listaModalidades');
+            const idx = lista.children.length; // índice atual
+            const el = document.createElement('div');
+            el.className = 'item';
+            el.dataset.idx = idx;
+            el.innerHTML = `
+        <button type="button" class="remover-item" onclick="removerModalidade(this)">X</button>
+        <h4>Modalidade</h4>
+        <label>Nome</label>
+        <input type="text" class="mod-nome" value="${dados?.nome || ''}" />
+        <label>Descrição</label>
+        <textarea class="mod-desc" rows="2">${dados?.descricao || ''}</textarea>
+        <label>Horários</label>
+        <input type="text" class="mod-horario" value="${dados?.horario || ''}" />
+        <label>Professores</label>
+        <input type="text" class="mod-prof" value="${dados?.professores || ''}" />
+      `;
+            lista.appendChild(el);
+        }
+
+        function removerModalidade(btn) {
+            const item = btn.closest('.item');
+            if (item) item.remove();
+        }
+
+        function salvarModalidades() {
+            const cms = lerCMS();
+            const lista = document.querySelectorAll('#listaModalidades .item');
+            const dados = [];
+            lista.forEach(item => {
+                dados.push({
+                    nome: item.querySelector('.mod-nome').value.trim(),
+                    descricao: item.querySelector('.mod-desc').value.trim(),
+                    horario: item.querySelector('.mod-horario').value.trim(),
+                    professores: item.querySelector('.mod-prof').value.trim()
+                });
+            });
+            cms.modalidades = dados;
+            gravarCMS(cms);
+            msgOK('msgModalidades');
+        }
+
+        /* =====================================================
+           GALERIA
+        ===================================================== */
+        document.getElementById('galeriaInput').addEventListener('change', async (ev) => {
+            const files = [...ev.target.files];
+            for (const f of files) {
+                const dataURL = await fileToDataURL(f);
+                addImgGaleria({ src: dataURL, alt: f.name, categoria: 'tudo' });
+            }
+        });
+
+        function addImgGaleria(imgObj) {
+            const grid = document.getElementById('gridGaleria');
+            const fig = document.createElement('figure');
+            fig.innerHTML = `
+        <img src="${imgObj.src}" alt="${imgObj.alt || ''}">
+        <button type="button" onclick="removerImgGaleria(this)">X</button>
+      `;
+            fig.dataset.categoria = imgObj.categoria || 'tudo';
+            grid.appendChild(fig);
+        }
+
+        function removerImgGaleria(btn) {
+            const fig = btn.closest('figure');
+            if (fig) fig.remove();
+        }
+
+        function salvarGaleria() {
+            const cms = lerCMS();
+            const figs = document.querySelectorAll('#gridGaleria figure');
+            const dados = [];
+            figs.forEach(f => {
+                const img = f.querySelector('img');
+                dados.push({ src: img.src, alt: img.alt, categoria: f.dataset.categoria || 'tudo' });
+            });
+            cms.galeria = dados;
+            gravarCMS(cms);
+            msgOK('msgGaleria');
+        }
+
+        /* =====================================================
+           CONTATOS
+        ===================================================== */
+        function salvarContatos() {
+            const cms = lerCMS();
+            cms.contatos = {
+                email: document.getElementById('contatoEmail').value.trim(),
+                telefone: document.getElementById('contatoTelefone').value.trim(),
+                insta: document.getElementById('contatoInsta').value.trim(),
+                mensagem: document.getElementById('contatoMensagem').value.trim()
+            };
+            gravarCMS(cms);
+            msgOK('msgContatos');
+        }
+
+        /* =====================================================
+           ONDE ESTAMOS
+        ===================================================== */
+        function salvarOnde() {
+            const cms = lerCMS();
+            cms.onde = {
+                texto: document.getElementById('enderecoTexto').value.trim(),
+                mapa: document.getElementById('mapaEmbed').value.trim()
+            };
+            gravarCMS(cms);
+            msgOK('msgOnde');
+        }
+
+        /* =====================================================
+           CARREGAR DADOS AO ABRIR PAINEL
+        ===================================================== */
+        function carregarPainel() {
+            const cms = lerCMS();
+
+            // Home
+            if (cms.home) {
+                if (cms.home.titulo) document.getElementById('homeTitulo').value = cms.home.titulo;
+                if (cms.home.descricao) document.getElementById('homeDescricao').value = cms.home.descricao;
+                if (cms.home.imagem) document.getElementById('homePreview').src = cms.home.imagem;
+            }
+
+            // Sobre
+            if (cms.sobre) {
+                if (cms.sobre.texto) document.getElementById('sobreTexto').value = cms.sobre.texto;
+                if (cms.sobre.imagem) document.getElementById('sobrePreview').src = cms.sobre.imagem;
+                if (cms.sobre.missao) document.getElementById('sobreMissao').value = cms.sobre.missao;
+                if (cms.sobre.visao) document.getElementById('sobreVisao').value = cms.sobre.visao;
+                if (cms.sobre.valores) document.getElementById('sobreValores').value = cms.sobre.valores;
+            }
+
+            // Modalidades
+            if (Array.isArray(cms.modalidades)) {
+                cms.modalidades.forEach(m => addModalidade(m));
+            } else {
+                // preparar um card vazio inicial
+                addModalidade();
+            }
+
+            // Galeria
+            if (Array.isArray(cms.galeria)) {
+                cms.galeria.forEach(g => addImgGaleria(g));
+            }
+
+            // Contatos
+            if (cms.contatos) {
+                if (cms.contatos.email) document.getElementById('contatoEmail').value = cms.contatos.email;
+                if (cms.contatos.telefone) document.getElementById('contatoTelefone').value = cms.contatos.telefone;
+                if (cms.contatos.insta) document.getElementById('contatoInsta').value = cms.contatos.insta;
+                if (cms.contatos.mensagem) document.getElementById('contatoMensagem').value = cms.contatos.mensagem;
+            }
+
+            // Onde Estamos
+            if (cms.onde) {
+                if (cms.onde.texto) document.getElementById('enderecoTexto').value = cms.onde.texto;
+                if (cms.onde.mapa) document.getElementById('mapaEmbed').value = cms.onde.mapa;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', carregarPainel);
+    </script>
 </body>
+
 </html>
