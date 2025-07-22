@@ -127,30 +127,21 @@
             <div id="msgOnde" class="msg-salvo">Localização salva!</div>
         </div>
 
-        <!-- ===================================================== -->
-        <!-- LOGOUT (Somente demonstrativo)                       -->
-        <!-- ===================================================== -->
-        <div id="Logout" class="admin-card anchor-offset">
-            <h2>Sair</h2>
-            <p>Funcionalidade de login/logout não implementada neste protótipo.</p>
-        </div>
-    </main>
-
     <!-- ======================================================= -->
     <!-- SCRIPT DE DADOS                                         -->
     <!-- Estrutura única no localStorage: rg2CMS                 -->
     <!-- ======================================================= -->
     <script>
         /* =====================================================
-           Estrutura de dados armazenada no localStorage:
-           rg2CMS = {
-             home:        { titulo, descricao, imagem },
-             sobre:       { texto, imagem, missao, visao, valores },
-             modalidades: [ {nome, descricao, horario, professores}, ... ],
-             galeria:     [ {src, alt, categoria}, ... ],
-             contatos:    { email, telefone, insta, mensagem },
-             onde:        { texto, mapa }
-           }
+        Estrutura de dados armazenada no localStorage:
+        rg2CMS = {
+            home:        { titulo, descricao, imagem },
+            sobre:       { texto, imagem, missao, visao, valores },
+            modalidades: [ {nome, descricao, horario, professores}, ... ],
+            galeria:     [ {src, alt, categoria}, ... ],
+            contatos:    { email, telefone, insta, mensagem },
+            onde:        { texto, mapa }
+        }
         ===================================================== */
 
         const CHAVE = 'rg2CMS';
@@ -180,7 +171,7 @@
         }
 
         /* =====================================================
-           HOME
+        HOME
         ===================================================== */
         async function salvarHome() {
             const cms = lerCMS();
@@ -201,7 +192,7 @@
         });
 
         /* =====================================================
-           SOBRE (+ Missão/Visão/Valores)
+        SOBRE (+ Missão/Visão/Valores)
         ===================================================== */
         async function salvarSobre() {
             const cms = lerCMS();
@@ -224,7 +215,7 @@
         });
 
         /* =====================================================
-           MODALIDADES (lista dinâmico)
+        MODALIDADES (lista dinâmico)
         ===================================================== */
         function addModalidade(dados) {
             const lista = document.getElementById('listaModalidades');
@@ -243,7 +234,7 @@
         <input type="text" class="mod-horario" value="${dados?.horario || ''}" />
         <label>Professores</label>
         <input type="text" class="mod-prof" value="${dados?.professores || ''}" />
-      `;
+    `;
             lista.appendChild(el);
         }
 
@@ -270,7 +261,7 @@
         }
 
         /* =====================================================
-           GALERIA
+        GALERIA
         ===================================================== */
         document.getElementById('galeriaInput').addEventListener('change', async (ev) => {
             const files = [...ev.target.files];
@@ -286,7 +277,7 @@
             fig.innerHTML = `
         <img src="${imgObj.src}" alt="${imgObj.alt || ''}">
         <button type="button" onclick="removerImgGaleria(this)">X</button>
-      `;
+    `;
             fig.dataset.categoria = imgObj.categoria || 'tudo';
             grid.appendChild(fig);
         }
@@ -310,7 +301,7 @@
         }
 
         /* =====================================================
-           CONTATOS
+        CONTATOS
         ===================================================== */
         function salvarContatos() {
             const cms = lerCMS();

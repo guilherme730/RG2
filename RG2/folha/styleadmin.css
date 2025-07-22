@@ -132,6 +132,7 @@ main h2 {
 .admin-card input[type="email"],
 .admin-card textarea {
   width: 100%;
+  max-width: 850px;
   padding: 10px;
   border: 1px solid var(--dourado);
   border-radius: 6px;
