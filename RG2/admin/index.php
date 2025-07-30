@@ -19,7 +19,7 @@ unset($_SESSION['nao_autenticado']);
 endif;
 ?>
 
-<form action="/RG2/login2.php" method="post">
+<form action="/RG2/admin/login.php" method="post">
   <div class="imgcontainer">
     <img src="imagens/Logo Dinâmico RG2 Sports.png" alt="Avatar" class="avatar">
   </div>
