@@ -28,11 +28,12 @@ a {
 
 /* ===================== CABEÇALHO ===================== */
 #header {
+  min-height: 100vh;
   background-color: var(--azul);
   color: var(--branco);
-  padding: 30px 0px;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cabecalho {
@@ -149,10 +150,14 @@ nav ul li a:hover::after {
 .modalidades,
 .galeria,
 .contato,
-.home,
-.sobre,
-.header {
+.sobre {
   scroll-margin-top: 55px;
+}
+
+#sobre,
+#modalidades,
+#galeria-container {
+  scroll-margin-top: 100px;
 }
 
 @media (max-width: 768px) {

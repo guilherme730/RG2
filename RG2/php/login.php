@@ -9,8 +9,17 @@
 <body>
 
 <h2>Login Form</h2>
+<?php
+if (isset($_SESSION['nao_autenticado'])):
+?>
+<div class="alert alert-danger">Usuário e/ou senha inválidos</div>
+<?php
+// Remove a variável da sessão para que a mensagem não apareça novamente
+unset($_SESSION['nao_autenticado']);
+endif;
+?>
 
-<form action="/action_page.php" method="post">
+<form action="/RG2/login2.php" method="post">
   <div class="imgcontainer">
     <img src="imagens/Logo Dinâmico RG2 Sports.png" alt="Avatar" class="avatar">
   </div>
@@ -29,7 +38,6 @@
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancelar</button>
     <span class="psw">Esqueceu sua <a href="#">senha?</a></span>
   </div>
 </form>
